@@ -1,0 +1,69 @@
+﻿@page "/razor"
+
+<h3>Razor Syntax</h3>
+
+
+<!C Codigo C# plano></!C>
+<span>@(2 + 2)</span>
+<span>@@Username</span>
+
+
+
+<!C Excepcion de arroba></!C>
+<a href="mailto:aprender@gmail.com">aprender@gmail.com</a>
+
+
+
+<!C MarkUp Especifico></!C>
+if(elementos ==null)
+{
+    <p>Loading...</p>
+}
+
+
+
+<!C Expresiones Implicitas></!C>
+<p>@DateTime.Now</p>
+<p>@DateTime.DaysInMonth(2023,10)</p>
+
+<!C Excepcion expresiones Implicitas></!C>
+<p> await CallMethod("with some","parameters")</p>
+
+
+
+<!C Expresiones Explicitas></!C>
+<p>@(DateTime.Now - TimeSpan.FromDays(30))</p>
+
+<!C Concatenar Expresiones Explicitas></!C>
+<p>Hace un mes, la fecha fue: @(DateTime.Now - TimeSpan.FromDays(30))</p>
+
+
+
+<!C Bloques de codigo></!C>
+@{
+    var codeBlock = "Este es el valor de la variable";
+}
+<span>@codeBlock</span>
+
+
+
+<!C Estructuras de Control></!C>
+@if(condicion)
+{
+    <p>Hay varios clientes</p>
+}
+else if(condicion2)
+{
+    <p> No hay clientes</p>
+}
+
+
+
+<!C Directivas></!C>
+@code.......{C#}
+@page.......{ruta}
+@implements.......{C# / Interfaces}
+@inherits.........{Herencia}
+@inject...........{Inyeccion de dependencias en razor}
+@layout...........{Cual layout se va usar en ese componente puntual}
+@using............{Acceder a elementos de una determinada libreria}
